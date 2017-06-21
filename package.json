@@ -4,7 +4,7 @@
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "bin": {
-    "local-dynamodb": "build/bin/local-dynamodb"
+    "local-dynamodb": "./build/bin/local-dynamodb"
   },
   "scripts": {
     "lint": "tslint -p .",
