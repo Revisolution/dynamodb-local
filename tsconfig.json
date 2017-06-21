@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "es2017",
+    "module": "commonjs",
+    "allowJs": false,
+    "jsx": "react",
+    "baseUrl": "./src",
+    "outDir":"build",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "inlineSourceMap": true,
+    "noImplicitAny": true,
+    "experimentalDecorators": true,
+    "plugins": [
+			{
+        "name": "tslint-language-service",
+        "ignoreDefinitionFiles": true
+      }
+    ]
+  },
+  "include": [
+    "src/**/*"
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "name": "local-dynamodb",
+  "version": "0.1.0",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "bin": {
+    "local-dynamodb": "build/bin/local-dynamodb"
+  },
+  "scripts": {
+    "lint": "tslint -p .",
+    "build": "tsc -d",
+    "build-watch": "tsc -w",
+    "prepublish": "npm run lint && npm run build"
+  },
+  "dependencies": {
+    "progress": "^1.1.8",
+    "tar": "^3.1.5",
+    "zlib": "^1.0.5"
+  },
+  "devDependencies": {
+    "@types/node": "^8.0.1",
+    "@types/progress": "^2.0.0",
+    "tslint": "^5.4.3",
+    "typescript": "rc"
+  },
+  "files":[
+    "build/*",
+    "!src/*"
+  ],
+  "engines": {
+    "node": ">=8.0"
+  },
+  "description": "Local DynamoDB",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/revisolution/dynamodb-localhost"
+  },
+  "keywords": [
+    "aws",
+    "dynamodb",
+    "dynamodb-local"
+  ],
+  "author": "Junyoung Choi <fluke8259@gmail.com>",
+  "license": "MIT"
+}
