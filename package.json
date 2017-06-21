@@ -1,6 +1,6 @@
 {
   "name": "@rokt33r/local-dynamodb",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "bin": {
@@ -23,7 +23,7 @@
     "tslint": "^5.4.3",
     "typescript": "rc"
   },
-  "files":[
+  "files": [
     "build/*",
     "!src/*"
   ],
