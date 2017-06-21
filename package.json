@@ -1,5 +1,5 @@
 {
-  "name": "local-dynamodb",
+  "name": "@rokt33r/local-dynamodb",
   "version": "0.1.0",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
