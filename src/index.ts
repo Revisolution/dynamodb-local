@@ -17,32 +17,34 @@ export class DynamoDB {
     }
   }
 
-  public install(): Promise<void> {
+  public install = (): Promise<void> => {
     return install(this.config)
   }
 
-  public start(): Promise<void> {
+  public start = (): Promise<void> => {
+    const self = this
     return start(this.config)
       .then((child) => {
         console.log('Dynamodb Local Started, Visit: http://localhost:' + this.config.port + '/shell')
-        this.process = child
+        self.process = child
       })
   }
 
-  public installAndStart(): Promise<void> {
+  public installAndStart = (): Promise<void> => {
     return this.install()
       .then(this.start.bind(this))
   }
 
-  public stop() {
-    if (this.process == null || !this.process.connected) {
+  public stop = () => {
+    if (this.process == null) {
       console.warn('No process to stop.')
     } else {
       this.process.kill()
+      this.process = null
     }
   }
 
-  public restart(): Promise<void> {
+  public restart = (): Promise<void> => {
     this.stop()
     return this.start()
   }
