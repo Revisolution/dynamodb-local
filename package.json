@@ -1,10 +1,10 @@
 {
   "name": "@rokt33r/local-dynamodb",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
   "bin": {
-    "local-dynamodb": "./build/bin/local-dynamodb"
+    "local-dynamodb": "./build/bin/local-dynamodb.js"
   },
   "scripts": {
     "lint": "tslint -p .",
@@ -17,14 +17,14 @@
     "tar": "^3.1.5"
   },
   "devDependencies": {
-    "@types/node": "^8.0.1",
+    "@types/node": "^8.0.33",
     "@types/progress": "^2.0.0",
     "tslint": "^5.4.3",
     "typescript": "rc"
   },
   "files": [
     "build/*",
-    "!src/*"
+    "src/*"
   ],
   "engines": {
     "node": ">=8.0"
