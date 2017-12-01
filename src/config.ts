@@ -11,6 +11,7 @@ export interface Config {
   cors?: string
   delayTransientStatuses?: boolean
   optimizeDbBeforeStartup?: boolean
+  silent?: boolean
 }
 
 export const baseConfig: Config = {
@@ -18,4 +19,5 @@ export const baseConfig: Config = {
   installPath: path.join(os.homedir(), '.dynamodb'),
   jar: 'DynamoDBLocal.jar',
   port: 8000,
+  silent: false,
 }

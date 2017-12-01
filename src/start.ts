@@ -49,6 +49,7 @@ export const start = (config: Config): Promise<ChildProcess> => {
       if (code && code !== 0) {
         console.warn('DynamoDB Local process has been closed with ' + code)
       }
+      console.log('DynamoDB Local process has been closed safely')
     })
 
     resolve(child)

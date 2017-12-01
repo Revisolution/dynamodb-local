@@ -7,14 +7,21 @@ import { install } from './install'
 import { start } from './start'
 
 export class DynamoDB {
-  public config: Config
-  public process: ChildProcess
+  private config: Config
+  private process: ChildProcess
+  private log: (...args: any[]) => void
 
   public constructor(overrideConfig: Partial<Config> = {}) {
     this.config = {
       ...baseConfig,
       ...overrideConfig,
     }
+
+    this.log = this.config.silent
+      ? () => {
+        // Do nothing
+      }
+      : console.log
   }
 
   public install = (): Promise<void> => {
@@ -25,7 +32,7 @@ export class DynamoDB {
     const self = this
     return start(this.config)
       .then((child) => {
-        console.log('Dynamodb Local Started, Visit: http://localhost:' + this.config.port + '/shell')
+        this.log('Dynamodb Local Started, Visit: http://localhost:' + this.config.port + '/shell')
         self.process = child
       })
   }
@@ -37,7 +44,7 @@ export class DynamoDB {
 
   public stop = () => {
     if (this.process == null) {
-      console.warn('No process to stop.')
+      this.log('No process to stop.')
     } else {
       this.process.kill()
       this.process = null
